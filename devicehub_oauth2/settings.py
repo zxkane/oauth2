@@ -114,3 +114,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+OAUTH2_PROVIDER = {
+    'SCOPES': {
+        'read': 'Read scope',
+        'write': 'Write scope',
+	'resources': 'Read public resources',
+	'privates': 'Read private resources',
+    },
+}
