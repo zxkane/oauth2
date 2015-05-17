@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from views import Me
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^oauth/me', Me.as_view(), name='me'),
     url(r'^oauth/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
 ]
